@@ -1,0 +1,52 @@
+<!--
+`da-demo-actions-list`
+@group Nuxeo UI
+@element da-demo-actions-list
+-->
+<dom-module id="da-demo-actions-list">
+  <template>
+    <style include="iron-flex iron-flex-alignment nuxeo-styles">
+
+    </style>
+
+<nuxeo-page>
+
+<div slot="header">
+  <div>[[i18n('da.label.demo-actions-page')]]</div>
+</div>
+    <div class="content">
+      <nuxeo-card collapsible opened>
+        <div>[[i18n('da.label.demo-actions-page-description')]]</div>
+      </nuxeo-card>
+
+      <nuxeo-slot slot="DEMO_ACTIONS"
+                  model="[[mySlotModel]]"></nuxeo-slot>
+
+    </div>
+
+    </nuxeo-page>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'da-demo-actions-list',
+      behaviors: [Nuxeo.I18nBehavior],
+      properties: {
+
+        visible: Boolean,
+        actionContext: {
+          type: Object,
+          computed: '_actionContext(user, routeParams)',
+        }
+      },
+
+      _actionContext: function () {
+        return { foo: "bar" };
+      },
+
+      /**
+       * And here you can add your custom functions.
+       */
+    });
+  </script>
+</dom-module>

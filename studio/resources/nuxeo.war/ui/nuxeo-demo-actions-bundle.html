@@ -1,0 +1,27 @@
+<!--
+***
+STUDIO CODE SPACE
+***
+Studio will use this file to generate your configuration.
+You may tweak it, but note that any configuration seen as invalid by Studio will automatically be removed.
+
+Should you wish to add custom code, we recommend using the nuxeo-demo-actions-custom-bundle.html file instead.
+-->
+
+<link rel="import" href="elements/da-demo-action.html">
+<link rel="import" href="elements/da-demo-actions-list.html">
+<link rel="import" href="elements/nuxeo-operation-button-no-icon.html">
+<link rel="import" href="nuxeo-demo-actions-custom-bundle.html">
+<!-- Contribution of element 'nuxeo-menu-item' for slot 'ADMINISTRATION_MENU' -->
+<nuxeo-slot-content name="da_adminDemoActionsPage" slot="ADMINISTRATION_MENU" order="100">
+  <template>
+    <nuxeo-menu-item name="da_admindemoactionspage" label="da.label.demo-actions-page" route="administration:da_admindemoactionspage"></nuxeo-menu-item>
+  </template>
+</nuxeo-slot-content>
+<!-- Contribution of element 'da-demo-actions-list' for slot 'ADMINISTRATION_PAGES' -->
+<nuxeo-slot-content name="da_adminDemoActionsPage" slot="ADMINISTRATION_PAGES">
+  <template>
+    <da-demo-actions-list name="da_admindemoactionspage"></da-demo-actions-list>
+  </template>
+</nuxeo-slot-content>
+

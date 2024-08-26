@@ -1,0 +1,43 @@
+<!--
+`da-demo-action`
+@group Nuxeo UI
+@element da-demo-action
+-->
+<dom-module id="da-demo-action">
+  <template>
+    <style include="iron-flex iron-flex-alignment nuxeo-styles">
+      .description {
+        margin-left: 10px
+      }
+    </style>
+
+    <nuxeo-card class="layout horizontal center">
+
+      <nuxeo-operation-button-no-icon class="layout primary"
+                                      label="Send Case Report to Team"
+                                      tooltip="Send Case Report to Team"
+                                      operation="javascript.api_CaseReport_SendToTeam"
+                                      input="[[document]]"
+                                      notification="Report sent."
+                                      event="document-updated">
+      </nuxeo-operation-button-no-icon>
+
+      <div class="description">This is a description of the action.</div>
+    </nuxeo-card>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'da-demo-action',
+      behaviors: [Nuxeo.LayoutBehavior],
+      properties: {
+        icon: {
+          type: String,
+          value: "icons:mail"
+        }
+
+      }
+    });
+  </script>
+</dom-module>
